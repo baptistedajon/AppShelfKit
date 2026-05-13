@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <title id="title">App shelf cards</title>
+  <desc id="desc">Four rounded app cards arranged in a clean grid.</desc>
+  <rect width="1200" height="600" fill="#F5F5F7"/>
+  <g transform="translate(170 110)">
+    <rect width="380" height="160" rx="32" fill="#FFFFFF" stroke="#D1D1D6"/>
+    <rect x="32" y="32" width="96" height="96" rx="24" fill="#007AFF"/>
+    <rect x="152" y="48" width="168" height="20" rx="10" fill="#1D1D1F"/>
+    <rect x="152" y="88" width="120" height="16" rx="8" fill="#8E8E93"/>
+  </g>
+  <g transform="translate(650 110)">
+    <rect width="380" height="160" rx="32" fill="#FFFFFF" stroke="#D1D1D6"/>
+    <rect x="32" y="32" width="96" height="96" rx="24" fill="#34C759"/>
+    <rect x="152" y="48" width="184" height="20" rx="10" fill="#1D1D1F"/>
+    <rect x="152" y="88" width="140" height="16" rx="8" fill="#8E8E93"/>
+  </g>
+  <g transform="translate(170 330)">
+    <rect width="380" height="160" rx="32" fill="#FFFFFF" stroke="#D1D1D6"/>
+    <rect x="32" y="32" width="96" height="96" rx="24" fill="#FF9500"/>
+    <rect x="152" y="48" width="156" height="20" rx="10" fill="#1D1D1F"/>
+    <rect x="152" y="88" width="130" height="16" rx="8" fill="#8E8E93"/>
+  </g>
+  <g transform="translate(650 330)">
+    <rect width="380" height="160" rx="32" fill="#FFFFFF" stroke="#D1D1D6"/>
+    <rect x="32" y="32" width="96" height="96" rx="24" fill="#AF52DE"/>
+    <rect x="152" y="48" width="190" height="20" rx="10" fill="#1D1D1F"/>
+    <rect x="152" y="88" width="112" height="16" rx="8" fill="#8E8E93"/>
+  </g>
+</svg>

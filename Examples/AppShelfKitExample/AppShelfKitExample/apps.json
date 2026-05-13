@@ -1,0 +1,36 @@
+{
+  "title": "Bundled Sample Apps",
+  "subtitle": "Loaded from the example app's local apps.json resource",
+  "apps": [
+    {
+      "id": "json-journal",
+      "name": "JSON Journal",
+      "subtitle": "Loaded from bundled JSON",
+      "description": "A placeholder journaling app configured through a local apps.json file.",
+      "appStoreURL": "https://apps.apple.com/app/id456789012",
+      "category": "Lifestyle",
+      "tintColorHex": "#5856D6",
+      "isFeatured": true
+    },
+    {
+      "id": "json-budget",
+      "name": "JSON Budget",
+      "subtitle": "A fake finance app",
+      "description": "A placeholder budget app loaded from JSON.",
+      "appStoreURL": "https://apps.apple.com/app/id567890123",
+      "category": "Finance",
+      "tintColorHex": "#30B0C7",
+      "isFeatured": false
+    },
+    {
+      "id": "json-weather",
+      "name": "JSON Weather",
+      "subtitle": "Forecast placeholder",
+      "description": "A sample weather app configured in the bundled JSON file.",
+      "appStoreURL": "https://apps.apple.com/app/id678901234",
+      "category": "Weather",
+      "tintColorHex": "#64D2FF",
+      "isFeatured": false
+    }
+  ]
+}

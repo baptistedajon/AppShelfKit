@@ -1,0 +1,70 @@
+# AppShelfKit
+
+AppShelfKit is a lightweight SwiftUI package for Apple platform developers who want to showcase and cross-promote their other apps inside their apps.
+
+This file is an AI-readable map for coding agents and LLMs. Start here, then read `AGENTS.md` before making changes.
+
+## Key Files
+
+- `README.md`: project overview, requirements, installation, JSON examples, and sample app notes.
+- `AGENTS.md`: guardrails for AI coding agents.
+- `CONTRIBUTING.md`: contribution workflow, public API rules, and test expectations.
+- `CHANGELOG.md`: release history and current 0.1.0 scope.
+- `RELEASE_CHECKLIST.md`: release process.
+- `SECURITY.md`: vulnerability reporting policy.
+- `SUPPORT.md`: support boundaries.
+- `LICENSE`: MIT license.
+
+## Source Map
+
+- `Package.swift`: Swift Package Manager manifest.
+- `Sources/AppShelfKit/Models/`: public app metadata models.
+- `Sources/AppShelfKit/Configuration/`: local and remote JSON configuration support.
+- `Sources/AppShelfKit/Styles/`: style presets and display tuning.
+- `Sources/AppShelfKit/Views/`: public SwiftUI views.
+- `Sources/AppShelfKit/AppShelfKit.docc/`: DocC articles, symbol documentation, and tutorials.
+- `Tests/AppShelfKitTests/`: deterministic unit tests.
+- `Examples/AppShelfKitExample/`: sample SwiftUI app.
+
+## Public API To Preserve
+
+- `AppShelfItem`
+- `AppStoreAppIdentifier`
+- `AppShelfConfiguration`
+- `AppShelfConfigurationError`
+- `AppShelfLoader`
+- `AppShelfLoadingError`
+- `AppShelfLayout`
+- `AppShelfStyle`
+- `AppShelfView`
+- `AppShelfRemoteView`
+
+## Development Commands
+
+Run tests:
+
+```sh
+swift test
+```
+
+Use Xcode explicitly if needed:
+
+```sh
+DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer swift test
+```
+
+Check whitespace:
+
+```sh
+git diff --check
+```
+
+## Constraints
+
+- Keep the package dependency-free.
+- Use native SwiftUI only for UI.
+- Keep remote loading optional.
+- Do not add real network calls to tests.
+- Do not scrape the App Store.
+- Preserve Dynamic Type and accessibility defaults.
+- Update README, DocC, and tests when changing public behavior.

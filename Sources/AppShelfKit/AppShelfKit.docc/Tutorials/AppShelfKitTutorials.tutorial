@@ -1,0 +1,13 @@
+@Tutorials(name: "AppShelfKit") {
+    @Intro(title: "Learn AppShelfKit") {
+        Add a native SwiftUI shelf that showcases apps from the same developer, then choose the data source, layout, and style that fit your app.
+    }
+
+    @Chapter(name: "Essentials") {
+        @Image(source: "chapter-essentials.svg", alt: "Four rounded app cards arranged in a clean grid.")
+        @TutorialReference(tutorial: "doc:ShowcaseAppsWithHardcodedData")
+        @TutorialReference(tutorial: "doc:LoadAppsFromLocalJSON")
+        @TutorialReference(tutorial: "doc:LoadAppsFromRemoteJSON")
+        @TutorialReference(tutorial: "doc:CustomizeLayoutAndStyle")
+    }
+}

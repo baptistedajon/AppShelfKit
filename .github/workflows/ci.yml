@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - "release/**"
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: SwiftPM Tests
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show Toolchain
+        run: |
+          xcodebuild -version
+          swift --version
+
+      - name: Build and Test
+        run: swift test
+
+  docc:
+    name: DocC Validation
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show Toolchain
+        run: |
+          xcodebuild -version
+          swift --version
+
+      - name: Emit Symbol Graphs
+        run: |
+          mkdir -p /tmp/AppShelfKitDocCSymbols
+          swift build --target AppShelfKit \
+            -Xswiftc -emit-symbol-graph \
+            -Xswiftc -emit-symbol-graph-dir \
+            -Xswiftc /tmp/AppShelfKitDocCSymbols
+
+      - name: Convert DocC Catalog
+        run: |
+          xcrun docc convert Sources/AppShelfKit/AppShelfKit.docc \
+            --fallback-display-name AppShelfKit \
+            --fallback-bundle-identifier dev.appshelfkit.AppShelfKit \
+            --fallback-bundle-version 1.0.0 \
+            --additional-symbol-graph-dir /tmp/AppShelfKitDocCSymbols \
+            --output-path /tmp/AppShelfKitDocCOutput

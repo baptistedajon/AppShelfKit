@@ -1,0 +1,71 @@
+@Tutorial(time: 10) {
+    @Intro(title: "Load apps from local JSON") {
+        Move app shelf content into a bundled JSON file and decode it with ``AppShelfConfiguration``.
+    }
+
+    @Section(title: "Add apps.json") {
+        @ContentAndMedia {
+            Add an `apps.json` file to your app target and include app shelf metadata.
+
+            ```json
+            {
+              "title": "More Apps",
+              "subtitle": "Apps from the same developer",
+              "apps": [
+                {
+                  "id": "daybook",
+                  "name": "Daybook",
+                  "subtitle": "Private daily notes",
+                  "description": "A calm place for daily writing.",
+                  "appStoreURL": "https://apps.apple.com/app/id123456789",
+                  "category": "Lifestyle",
+                  "isFeatured": true
+                }
+              ]
+            }
+            ```
+        }
+
+        @Steps {
+            @Step {
+                Add a bundled JSON resource that matches ``AppShelfConfiguration``.
+            }
+        }
+    }
+
+    @Section(title: "Decode the resource") {
+        @ContentAndMedia {
+            Decode the resource at runtime. If the file is missing or invalid, handle ``AppShelfConfigurationError`` and fall back to a safe state.
+
+            ```swift
+            let configuration = try AppShelfConfiguration.decodeResource(named: "apps")
+            ```
+        }
+
+        @Steps {
+            @Step {
+                Decode the bundled file with ``AppShelfConfiguration/decodeResource(named:withExtension:in:decoder:)``.
+            }
+        }
+    }
+
+    @Section(title: "Render the configured apps") {
+        @ContentAndMedia {
+            Use the decoded apps with ``AppShelfView``.
+
+            ```swift
+            AppShelfView(
+                apps: configuration.apps,
+                layout: .list,
+                style: .automatic
+            )
+            ```
+        }
+
+        @Steps {
+            @Step {
+                Render `configuration.apps` with the layout and style you want.
+            }
+        }
+    }
+}

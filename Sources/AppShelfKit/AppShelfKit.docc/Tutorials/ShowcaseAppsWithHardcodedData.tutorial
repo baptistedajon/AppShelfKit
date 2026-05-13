@@ -1,0 +1,84 @@
+@Tutorial(time: 10) {
+    @Intro(title: "Showcase apps with hardcoded data") {
+        Build a simple app shelf directly from Swift values.
+    }
+
+    @Section(title: "Create app metadata") {
+        @ContentAndMedia {
+            Start by creating an array of ``AppShelfItem`` values. Use the `appStoreID` initializer when you only need to provide a numeric App Store ID.
+
+            ```swift
+            import AppShelfKit
+
+            let apps = [
+                AppShelfItem(
+                    name: "Daybook",
+                    subtitle: "Private daily notes",
+                    description: "A calm place for daily writing.",
+                    appStoreID: "123456789",
+                    category: "Lifestyle",
+                    isFeatured: true
+                ),
+                AppShelfItem(
+                    name: "Focus Timer",
+                    subtitle: "Simple sessions for deep work",
+                    appStoreID: "234567890",
+                    category: "Productivity"
+                ),
+            ]
+            ```
+        }
+
+        @Steps {
+            @Step {
+                Create the app metadata values that you want to show in the shelf.
+            }
+        }
+    }
+
+    @Section(title: "Display the shelf") {
+        @ContentAndMedia {
+            Pass your items to ``AppShelfView``. The default layout and style work well for a basic vertical shelf.
+
+            ```swift
+            import SwiftUI
+            import AppShelfKit
+
+            struct MoreAppsView: View {
+                let apps: [AppShelfItem]
+
+                var body: some View {
+                    AppShelfView(apps: apps)
+                        .padding()
+                }
+            }
+            ```
+        }
+
+        @Steps {
+            @Step {
+                Pass the array to ``AppShelfView`` from your SwiftUI view body.
+            }
+        }
+    }
+
+    @Section(title: "Use a featured layout") {
+        @ContentAndMedia {
+            Mark one item as featured and choose ``AppShelfLayout/featured`` for a richer presentation.
+
+            ```swift
+            AppShelfView(
+                apps: apps,
+                layout: .featured,
+                style: .prominent
+            )
+            ```
+        }
+
+        @Steps {
+            @Step {
+                Switch to the featured layout when one app should lead the shelf.
+            }
+        }
+    }
+}

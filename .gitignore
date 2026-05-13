@@ -1,8 +1,26 @@
 .DS_Store
-/.build
-/Packages
-xcuserdata/
+
+# Swift Package Manager
+.build/
+Packages/
+Package.resolved
+.swiftpm/
+!.swiftpm/xcode/
+
+# Xcode
 DerivedData/
-.swiftpm/configuration/registries.json
-.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+*.xcuserstate
+xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Archives and symbols
+*.xcarchive
+*.dSYM
+
+# Local credentials and environment
 .netrc
+.env

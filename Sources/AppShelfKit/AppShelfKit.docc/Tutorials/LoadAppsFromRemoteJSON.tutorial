@@ -1,0 +1,74 @@
+@Tutorial(time: 15) {
+    @Intro(title: "Load apps from remote JSON") {
+        Host app shelf JSON yourself and load it with AppShelfKit's optional remote APIs.
+    }
+
+    @Section(title: "Use the one-line remote view") {
+        @ContentAndMedia {
+            ``AppShelfRemoteView`` loads remote configuration automatically and includes loading and error states.
+
+            ```swift
+            import SwiftUI
+            import AppShelfKit
+
+            struct RemoteShelfView: View {
+                let configurationURL = URL(string: "https://example.com/apps.json")!
+
+                var body: some View {
+                    AppShelfRemoteView(
+                        configurationURL: configurationURL,
+                        layout: .featured,
+                        style: .prominent
+                    )
+                }
+            }
+            ```
+        }
+
+        @Steps {
+            @Step {
+                Use ``AppShelfRemoteView`` when the shelf can load directly from a hosted JSON file.
+            }
+        }
+    }
+
+    @Section(title: "Load manually when you need control") {
+        @ContentAndMedia {
+            Use ``AppShelfLoader`` directly when you want custom retry, caching, analytics, or error UI.
+
+            ```swift
+            let loader = AppShelfLoader()
+            let configuration = try await loader.load(from: configurationURL)
+            ```
+        }
+
+        @Steps {
+            @Step {
+                Call ``AppShelfLoader/load(from:)`` when your app owns the loading flow.
+            }
+        }
+    }
+
+    @Section(title: "Handle errors") {
+        @ContentAndMedia {
+            Remote loading validates HTTP responses and decodes JSON into ``AppShelfConfiguration``.
+
+            ```swift
+            do {
+                let configuration = try await AppShelfLoader().load(from: configurationURL)
+                print(configuration.apps)
+            } catch AppShelfLoadingError.unacceptableStatusCode(let statusCode) {
+                print("Server returned \(statusCode)")
+            } catch {
+                print("Could not load app shelf: \(error)")
+            }
+            ```
+        }
+
+        @Steps {
+            @Step {
+                Handle ``AppShelfLoadingError`` and keep a fallback UI available.
+            }
+        }
+    }
+}

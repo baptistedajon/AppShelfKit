@@ -1,0 +1,79 @@
+@Tutorial(time: 10) {
+    @Intro(title: "Customize layout and style") {
+        Choose an app shelf layout and tune its visual density with style presets.
+    }
+
+    @Section(title: "Pick a layout") {
+        @ContentAndMedia {
+            Use ``AppShelfLayout`` to choose the structure that fits your surface.
+
+            ```swift
+            AppShelfView(apps: apps, layout: .list)
+            AppShelfView(apps: apps, layout: .cards)
+            AppShelfView(apps: apps, layout: .compact)
+            AppShelfView(apps: apps, layout: .featured)
+            ```
+        }
+
+        @Steps {
+            @Step {
+                Choose the layout that best matches the space where the shelf appears.
+            }
+        }
+    }
+
+    @Section(title: "Use a style preset") {
+        @ContentAndMedia {
+            Start with one of the built-in ``AppShelfStyle`` presets.
+
+            ```swift
+            AppShelfView(
+                apps: apps,
+                layout: .cards,
+                style: .minimal
+            )
+
+            AppShelfView(
+                apps: apps,
+                layout: .featured,
+                style: .prominent
+            )
+            ```
+        }
+
+        @Steps {
+            @Step {
+                Start with a preset before defining a custom style.
+            }
+        }
+    }
+
+    @Section(title: "Create a custom style") {
+        @ContentAndMedia {
+            Create a custom style when your app needs a specific balance of content and density.
+
+            ```swift
+            let style = AppShelfStyle(
+                showsDescriptions: true,
+                showsCategories: true,
+                showsOpenButton: true,
+                cornerRadius: 18,
+                spacing: 16,
+                iconSize: 56
+            )
+
+            AppShelfView(
+                apps: apps,
+                layout: .featured,
+                style: style
+            )
+            ```
+        }
+
+        @Steps {
+            @Step {
+                Create a custom ``AppShelfStyle`` when the presets do not match your design.
+            }
+        }
+    }
+}
