@@ -3,14 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1A2B3C4D5E6F700000000001 /* AppShelfKitExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000011 /* AppShelfKitExampleApp.swift */; };
 		1A2B3C4D5E6F700000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000012 /* ContentView.swift */; };
 		1A2B3C4D5E6F700000000003 /* apps.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A2B3C4D5E6F700000000013 /* apps.json */; };
-		1A2B3C4D5E6F700000000004 /* AppShelfKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1A2B3C4D5E6F700000000030 /* AppShelfKit */; };
+		F4AAA3A12FB5F7CF007F6701 /* AppShelfKit in Frameworks */ = {isa = PBXBuildFile; productRef = F4AAA3A02FB5F7CF007F6701 /* AppShelfKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A2B3C4D5E6F700000000004 /* AppShelfKit in Frameworks */,
+				F4AAA3A12FB5F7CF007F6701 /* AppShelfKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +36,7 @@
 			isa = PBXGroup;
 			children = (
 				1A2B3C4D5E6F700000000041 /* AppShelfKitExample */,
+				F4AAA39F2FB5F7CF007F6701 /* Frameworks */,
 				1A2B3C4D5E6F700000000042 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,6 +59,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		F4AAA39F2FB5F7CF007F6701 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -75,7 +83,7 @@
 			);
 			name = AppShelfKitExample;
 			packageProductDependencies = (
-				1A2B3C4D5E6F700000000030 /* AppShelfKit */,
+				F4AAA3A02FB5F7CF007F6701 /* AppShelfKit */,
 			);
 			productName = AppShelfKitExample;
 			productReference = 1A2B3C4D5E6F700000000010 /* AppShelfKitExample.app */;
@@ -106,7 +114,7 @@
 			);
 			mainGroup = 1A2B3C4D5E6F700000000040;
 			packageReferences = (
-				1A2B3C4D5E6F700000000031 /* XCLocalSwiftPackageReference "../.." */,
+				F4AAA39C2FB5F79F007F6701 /* XCLocalSwiftPackageReference "../../../AppShelfKit" */,
 			);
 			productRefGroup = 1A2B3C4D5E6F700000000042 /* Products */;
 			projectDirPath = "";
@@ -330,16 +338,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		1A2B3C4D5E6F700000000031 /* XCLocalSwiftPackageReference "../.." */ = {
+		F4AAA39C2FB5F79F007F6701 /* XCLocalSwiftPackageReference "../../../AppShelfKit" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ../..;
+			relativePath = ../../../AppShelfKit;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1A2B3C4D5E6F700000000030 /* AppShelfKit */ = {
+		F4AAA3A02FB5F7CF007F6701 /* AppShelfKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1A2B3C4D5E6F700000000031 /* XCLocalSwiftPackageReference "../.." */;
+			package = F4AAA39C2FB5F79F007F6701 /* XCLocalSwiftPackageReference "../../../AppShelfKit" */;
 			productName = AppShelfKit;
 		};
 /* End XCSwiftPackageProductDependency section */

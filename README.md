@@ -110,7 +110,7 @@ Tests/AppShelfKitTests/
 
 ## Example App
 
-Open `Examples/AppShelfKitExample/AppShelfKitExample.xcodeproj` in Xcode to run the sample SwiftUI app. It demonstrates hardcoded apps, bundled JSON configuration, layout variants, style presets, and remote configuration placeholder code.
+Open `Examples/AppShelfKitExample/AppShelfKitExample.xcworkspace` in Xcode to run the sample SwiftUI app. The workspace includes both the example app project and the local AppShelfKit package, which helps Xcode resolve the `AppShelfKit` product reliably. The sample demonstrates hardcoded apps, bundled JSON configuration, layout variants, style presets, and remote configuration placeholder code.
 
 ## Project Resources
 
